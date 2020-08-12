@@ -1,5 +1,5 @@
 EFFECTS_DIR = \
-m8-vca
+$(PLUGIN_NAME)
 
 ifeq ($(MOD),1)
 EFFECTS_DIR += HardwareBypass
@@ -17,7 +17,7 @@ all:
 install:
 		@for fx in $(EFFECTS_DIR); do \
 		cd $$fx; \
-		$(MAKE) install INSTALL_PATH=$(INSTALL_PATH); \
+		$(MAKE) install; \
 		cd ..; \
 		done
 

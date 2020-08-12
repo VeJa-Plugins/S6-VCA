@@ -3,6 +3,6 @@
 
 <http://VeJaPlugins.com/plugins/Release/m8vca> 
 	a lv2:Plugin ;
-    lv2:binary <m8-vca.so> ;
-    rdfs:seeAlso <m8-vca.ttl> ;
+    lv2:binary <veja-mars8-vca.so> ;
+    rdfs:seeAlso <veja-mars8-vca.ttl> ;
 	lv2:optionalFeature lv2:hardRTCapable .

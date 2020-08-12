@@ -14,7 +14,7 @@
 a lv2:Plugin, mod:ControlVoltagePlugin;
 lv2:requiredFeature urid:map ;
 
-doap:name "M8 VCA";
+doap:name "MARS8 VCA";
 
 doap:developer [
     foaf:name "Jarno & Jan";
