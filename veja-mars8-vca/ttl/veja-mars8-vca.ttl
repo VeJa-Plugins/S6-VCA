@@ -10,11 +10,11 @@
 @prefix midi: <http://lv2plug.in/ns/ext/midi#> .
 @prefix urid: <http://lv2plug.in/ns/ext/urid#> .
 
-<http://VeJaPlugins.com/plugins/Release/m8vca> 
+<http://VeJaPlugins.com/plugins/Release/mars8vca> 
 a lv2:Plugin, mod:ControlVoltagePlugin;
 lv2:requiredFeature urid:map ;
 
-doap:name "MARS8 VCA";
+doap:name "MARS8_VCA";
 
 doap:developer [
     foaf:name "Jarno & Jan";

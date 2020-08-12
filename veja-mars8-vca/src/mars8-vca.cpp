@@ -12,12 +12,7 @@
 #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
 
 /**********************************************************************************************************************************************************/
-#define PLUGIN_URI "http://VeJaPlugins.com/plugins/Release/m8vca"
-#define PI 3.14159265358979323846264338327950288
-#define MAX_PORTS 8
-#define MAX_OUTPUT_BUFFER_LENGHT 256
-#define VCF_LOW_PASS_MODE 0
-
+#define PLUGIN_URI "http://VeJaPlugins.com/plugins/Release/mars8vca"
 
 enum{
     INPUT,
@@ -110,7 +105,7 @@ void Mars_8::run(LV2_Handle instance, uint32_t n_samples)
   	//start audio processing
     for(uint32_t i = 0; i < n_samples; i++)
     {
-        //self->output[i] = self->input[i] * ((((float)*self->lvl / 10) * ((float)self->env_signal[i]/10)) + (((float)*self->lfo_mod / 10) * ((float)self->lfo_signal[i] / 10)));
+        self->output[i] = self->input[i] * (((*self->lvl / 10) * (self->env_signal[i]/10)) + ((*self->lfo_mod / 10) * (self->lfo_signal[i] / 10)));
     }
 }   
 
