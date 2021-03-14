@@ -12,7 +12,7 @@
 #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
 
 /**********************************************************************************************************************************************************/
-#define PLUGIN_URI "http://VeJaPlugins.com/plugins/Release/m8vca"
+#define PLUGIN_URI "http://VeJaPlugins.com/plugins/Release/s6Vca"
 #define PI 3.14159265358979323846264338327950288
 #define MAX_PORTS 8
 #define MAX_OUTPUT_BUFFER_LENGHT 256
@@ -29,13 +29,13 @@ enum{
 };
 
 
-class Mars_8{
+class S6_vca{
 public:
-    Mars_8()
+    S6_vca()
     {
 
     }
-    ~Mars_8() {}
+    ~S6_vca() {}
     static LV2_Handle instantiate(const LV2_Descriptor* descriptor, double samplerate, const char* bundle_path, const LV2_Feature* const* features);
     static void activate(LV2_Handle instance);
     static void deactivate(LV2_Handle instance);
@@ -61,19 +61,19 @@ public:
 
 
 /**********************************************************************************************************************************************************/
-LV2_Handle Mars_8::instantiate(const LV2_Descriptor*   descriptor,
+LV2_Handle S6_vca::instantiate(const LV2_Descriptor*   descriptor,
 double                              samplerate,
 const char*                         bundle_path,
 const LV2_Feature* const* features)
 {
-    Mars_8* self = new Mars_8();
+    S6_vca* self = new S6_vca();
 
     return (LV2_Handle)self; 
 }
 /**********************************************************************************************************************************************************/
-void Mars_8::connect_port(LV2_Handle instance, uint32_t port, void *data)
+void S6_vca::connect_port(LV2_Handle instance, uint32_t port, void *data)
 {
-    Mars_8* self = (Mars_8*)instance;
+    S6_vca* self = (S6_vca*)instance;
     switch (port)
     {
         case INPUT:
@@ -98,42 +98,42 @@ void Mars_8::connect_port(LV2_Handle instance, uint32_t port, void *data)
     }
 }
 /**********************************************************************************************************************************************************/
-void Mars_8::activate(LV2_Handle instance)
+void S6_vca::activate(LV2_Handle instance)
 {
 }
 
 /**********************************************************************************************************************************************************/
-void Mars_8::run(LV2_Handle instance, uint32_t n_samples)
+void S6_vca::run(LV2_Handle instance, uint32_t n_samples)
 {
-    Mars_8* self = (Mars_8*)instance;
+    S6_vca* self = (S6_vca*)instance;
 
   	//start audio processing
     for(uint32_t i = 0; i < n_samples; i++)
     {
-        //self->output[i] = self->input[i] * ((((float)*self->lvl / 10) * ((float)self->env_signal[i]/10)) + (((float)*self->lfo_mod / 10) * ((float)self->lfo_signal[i] / 10)));
+        self->output[i] = self->input[i] * ((((float)*self->lvl / 10) * ((float)self->env_signal[i]/10)) + (((float)*self->lfo_mod / 10) * ((float)self->lfo_signal[i] / 10)));
     }
 }   
 
 /**********************************************************************************************************************************************************/
-void Mars_8::deactivate(LV2_Handle instance)
+void S6_vca::deactivate(LV2_Handle instance)
 {
     // TODO: include the deactivate function code here
 }
 /**********************************************************************************************************************************************************/
-void Mars_8::cleanup(LV2_Handle instance)
+void S6_vca::cleanup(LV2_Handle instance)
 {
-  delete ((Mars_8 *) instance); 
+  delete ((S6_vca *) instance); 
 }
 /**********************************************************************************************************************************************************/
 static const LV2_Descriptor Descriptor = {
     PLUGIN_URI,
-    Mars_8::instantiate,
-    Mars_8::connect_port,
-    Mars_8::activate,
-    Mars_8::run,
-    Mars_8::deactivate,
-    Mars_8::cleanup,
-    Mars_8::extension_data
+    S6_vca::instantiate,
+    S6_vca::connect_port,
+    S6_vca::activate,
+    S6_vca::run,
+    S6_vca::deactivate,
+    S6_vca::cleanup,
+    S6_vca::extension_data
 };
 /**********************************************************************************************************************************************************/
 LV2_SYMBOL_EXPORT
@@ -143,7 +143,7 @@ const LV2_Descriptor* lv2_descriptor(uint32_t index)
     else return NULL;
 }
 /**********************************************************************************************************************************************************/
-const void* Mars_8::extension_data(const char* uri)
+const void* S6_vca::extension_data(const char* uri)
 {
     return NULL;
 }

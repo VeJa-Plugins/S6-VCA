@@ -1,5 +1,5 @@
 
-NAME = m8-vca
+NAME = s6-vca
 
 # installation path
 INSTALL_PATH = /usr/local/lib/lv2
