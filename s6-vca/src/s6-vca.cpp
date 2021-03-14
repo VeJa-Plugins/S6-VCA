@@ -13,11 +13,6 @@
 
 /**********************************************************************************************************************************************************/
 #define PLUGIN_URI "http://VeJaPlugins.com/plugins/Release/s6Vca"
-#define PI 3.14159265358979323846264338327950288
-#define MAX_PORTS 8
-#define MAX_OUTPUT_BUFFER_LENGHT 256
-#define VCF_LOW_PASS_MODE 0
-
 
 enum{
     INPUT,

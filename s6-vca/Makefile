@@ -4,12 +4,11 @@ NAME = s6-vca
 # installation path
 INSTALL_PATH = /usr/local/lib/lv2
 COMPLETE_INSTALL_PATH = $(DESTDIR)$(INSTALL_PATH)/$(NAME).lv2
-
 # compiler and linker
 CXX ?= g++
 
 # flags
-CXXFLAGS += -I. -c -ffast-math -fPIC -DPIC -Wall
+CXXFLAGS += -I. -c -ffast-math -fPIC -DPIC -Wall -std=c++11
 LDFLAGS += -shared -lm
 
 # libs

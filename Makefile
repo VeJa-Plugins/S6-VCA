@@ -17,7 +17,7 @@ all:
 install:
 		@for fx in $(EFFECTS_DIR); do \
 		cd $$fx; \
-		$(MAKE) install INSTALL_PATH=$(INSTALL_PATH); \
+		$(MAKE) install; \
 		cd ..; \
 		done
 
